@@ -27,6 +27,13 @@ And '--help' for a detailed help
 VGCAT.exe --help
 ```
 
+## How to read the results
+
+The results given with the CSV can be opened with any spreadsheet software.
+Each row corresponds to a frame. The FPS column gives the average frametime of every frame within one second then converted to FPS.
+The frametime column gives the time it took to render a frame.
+The frametime FPS columns gives the frametime converted to FPS if every frame within one second took the same time to render. 
+
 ## Acknowledgments
 
 * OpenCV Library
