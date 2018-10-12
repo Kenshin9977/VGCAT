@@ -7,7 +7,6 @@ import numpy
 import os
 import progressbar
 import sys
-import time
 
 
 def unique_frame(path, debug):
@@ -39,6 +38,7 @@ def unique_frame(path, debug):
     last_unique_frame = 0
     total_fps_counter = 0
     actual_fps = 0
+    fps_to_display = 0
     identical_frame = 1
     fps_countdown = 1000
     frame_time = 1000/fps_video
@@ -72,11 +72,12 @@ def unique_frame(path, debug):
             actual_fps += 1
             last_unique_frame = current_timestamp
         if fps_countdown <= 0:
+            fps_to_display = actual_fps
             actual_fps = 0
             fps_countdown += 1000
 
         writer.writerow(row)
-        add_im2vid(actual_fps, video_with_fps, current_img, width)
+        add_im2vid(fps_to_display, video_with_fps, current_img, width)
         total_fps_counter += 1
         fps_countdown -= frame_time
         bar.update(total_fps_counter)

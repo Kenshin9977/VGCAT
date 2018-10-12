@@ -6,6 +6,10 @@ The purpose of this tool is to analyze a footage taken from a video game console
 
 Currently the results are saved within a CSV file and an .mp4 file which has an FPS counter at the top left corner.
 
+## Limits
+
+If the video is too static (menus of a game for instance) the difference between each frame isn't great enough to be detected. In this case a wrong number might be detected for frame per second and frame time. This issue can not be bypassed so please take it into account if you use this software.
+
 ## Downloads
 
 Binaries for Windows are available in the [Releases](https://github.com/Kenshin9977/VGCAT/releases) section.
