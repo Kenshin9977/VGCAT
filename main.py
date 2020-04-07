@@ -112,7 +112,7 @@ def detect_cluster(image1, image2, timestamp, debug):
             cv2.imwrite('Debug/ Bin debug FPS {}.png'.format(timestamp.replace(':', '-')), diff_bin)
         except IOError or PermissionError:
             pass
-    _, contours, _ = cv2.findContours(diff_bin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+    contours, _ = cv2.findContours(diff_bin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
     big_cluster = 0
     for contour in contours:
         if contour.size > 100:
